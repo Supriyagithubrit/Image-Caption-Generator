@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Image Caption Generator</title>
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+	 <meta content="" name="description">
+   <meta content="" name="keywords">
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+ 
+  <!-- Favicons -->
+  <link href="https://imagecaptiongenerator.com/static/assets/img/favicon_AI.jpg" rel="icon">
+  <link href="https://imagecaptiongenerator.com/static/assets/img/favicon_AI.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="./Image Caption Generator_files/css" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="./Image Caption Generator_files/bootstrap.min.css" rel="stylesheet">
+  <link href="./Image Caption Generator_files/icofont.min.css" rel="stylesheet">
+  <link href="./Image Caption Generator_files/boxicons.min.css" rel="stylesheet">
+  
+  <link href="./Image Caption Generator_files/remixicon.css" rel="stylesheet">
+  <link href="./Image Caption Generator_files/venobox.css" rel="stylesheet">
+  <link href="./Image Caption Generator_files/owl.carousel.min.css" rel="stylesheet">
+  <link href="./Image Caption Generator_files/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="./Image Caption Generator_files/style.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" type="js" href="IMG_javascript.js">
+</head>
+<body>
+	<div class="nav">
+		<div><a href="#" class="imagecaption">IMAGE CAPTION GENERATOR</a></div>
+    <div><a href="#choose_img" style="float: right; font-size: 24px; color:white;">Team</a></div>
+    <div><a href="#choose_img" class="home">Caption Your Image</a></div>
+    <div> <a href="#about" style="float: right; font-size: 24px; color:white;">About Project</a></div>
+    <div><a href="#home" class="home">Home</a></div>
+ 	</div>
+	<div class="bg-img">
+		<div class="row">
+          <div class="textleft">
+          	<h2 style="color: #fff;">Caption Your Image</h2>
+
+          	<p style="font-size: 15px;">with the help of deep learning</p>
+          	<div><a href="#" ><button class="start">Get Started</button></a></div>
+          </div>
+           <img src="img.png" class="image" alt="">
+        </div>
+    </div>
+
+    <main>
+    <div class="container">
+         <img src="tensorflow.jpg" class="imgsize">
+         <img src="keras.png" class="imgsize">
+         <img src="flask.png" class="imgsize">
+         <img src="html.png" class="imgsize">
+         <img src="css.png" class="imgsize">
+    </div>
+<section id="about" class="about">
+<div class="aboutcontainer">
+	<div class="afterabout"><h1 style="font-size: 35px;">ABOUT PROJECT</h1></div>
+ <div class="row1">
+	<div class="column"><p>Image caption Generator is a popular research area of Artificial Intelligence that deals with image understanding and a language description for that image. Generating well-formed sentences requires both syntactic and semantic understanding of the language.</p></div>
+	<div class="column2">
+		<p>Being able to describe the content of an image using accurately formed sentences is a very challenging task, but it could also have a great impact, by helping visually impaired people better understand the content of images.</p>
+		<button><a href="https://towardsdatascience.com/image-captioning-in-deep-learning-9cd23fb4d8d2" class="learn-more">Learn More</a></button>
+    </div>
+ </div>
+</div>
+</section>
+
+
+<!-- ======= Image captionong ======= -->
+<section class="choose_img"> 
+<div><h1 style="margin-left:42%; font-size: 40px; margin-top: 20px; color: #fff">Choose a picture</h1></div>
+
+ <div class="container1">
+  <div class="wrapper1">
+    <div class="image1">
+      <img class="img1" alt="" src="#">
+    </div>
+
+  </div>
+</div>
+     <input type="file" 
+       value="Choose a file" 
+       accept="image/png, image/jpeg" style="margin-left:36%; margin-top: 5px;border-radius: 20px;background-color:#3a8ffe ; color: #fff; width: 30%;font-size:18px; padding: 8px 14px;">
+
+      <div><a href="caption.html"><input id="submit-btn" type="submit" name="submit" value="CAPTION THIS" style="margin-left: 36%;width: 32%; border-radius: 20px;margin-top:10px;background-color: #3a8ffe; color: #fff; font-size:18px;padding: 8px 14px;"></a>
+      </div>
+</div>
+<script>
+      const wrapper = document.querySelector(".wrapper1");
+      const fileName = document.querySelector(".file-name1");
+      const defaultBtn = document.querySelector("#default-btn");
+      const customBtn = document.querySelector("#custom-btn");
+      const cancelBtn = document.querySelector("#cancel-btn i");
+      const img = document.querySelector(".img1");
+      let regExp = /[0-9a-zA-Z\^\&\'\@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+      function defaultBtnActive(){
+        defaultBtn.click();
+      }
+      defaultBtn.addEventListener("change", function(){
+        const file = this.files[0];
+        if(file){
+          const reader = new FileReader();
+          reader.onload = function(){
+            const result = reader.result;
+            img.src = result;
+            wrapper.classList.add("active");
+          }
+
+        
+          cancelBtn.addEventListener("click", function(){
+            img.src = "";
+            wrapper.classList.remove("active");
+          })
+          reader.readAsDataURL(file);
+        }
+        if(this.value){
+          let valueStore = this.value.match(regExp);
+          fileName.textContent = valueStore;
+        }
+      });
+  </script>
+
+</section>
+
+
+
+<section class="choose_img"> 
+<div><h1 style="margin-left:42%; font-size: 40px; margin-top: 20px; color: #fff">Choose a picture</h1></div>
+
+<div class="container1">
+  <div class="wrapper1">
+    <div class="image1">
+      <img class="img1" alt="" src="C:/Flickr8k/Flickr8k_dataset/Images/10815824_2997e03d76.jpg">
+    </div>
+
+  </div>
+
+      <input type="file" 
+       value="Choose a file" 
+       accept="image/png, image/jpeg" style="margin-left:15%;margin-top:12px;border-radius: 50px;background-color:#3a8ffe; color: #fff; width: 120%; font-size:18px; padding: 10px 14px;">
+
+      <div><a href="caption.html"><input id="submit-btn" type="submit" name="submit" value="CAPTION THIS" style="margin-left:15%;width: 126%; border-radius: 50px;margin-top:10px;background-color: #3a8ffe; color: #fff; font-size:22px; padding: 10px 14px;"></a>
+      </div>
+  </div>
+</section>
+<!-- End Team Section -->
+
+<!-- ======= Team Section ======= -->
+<section id="containerTeam">
+  <div class="containerTeam">
+         <h1 style="margin-left: 45%;font-size: 40px;">TEAM</h1>
+
+        <div class="grid-container">
+
+          <div class="col1">
+            <div class="member1">
+            <div class="imgMember"><img src="C:\Flickr8k\Flickr8k_dataset\supriya.jpg" alt="" style="height: 150px;width: 150px;border-radius: 50%;margin-right: 5px;"></div>
+              <div class="text-decoration">
+                <h3 style="color: black;">Supriya Kumari</h3>
+                <span>B-Tech Computer Science and Engineering <br>
+                     Specialization in Artificial intelligence and Machine Learning  </span>
+                <p>Sharda University</p>
+              </div>
+            </div>
+          </div>
+        
+
+          <div class="col2">
+            <div style="padding: 36px 38px;border-radius: 15px;background: #fff;">
+              <div><img src="C:\Flickr8k\Flickr8k_dataset\julupic.jpeg"  alt="" style="height: 150px;width: 150px;border-radius: 50%;margin-right: 5px;"></div>
+              <div class="text-decoration">
+                <h3 style="color: black;">Julu Basnet</h3>
+                <span>B-Tech Computer Science and Engineering
+                 <br> Information Technology</span>
+                <p>Sharda University</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row3">
+            <div class="member1">
+              <div><img src="C:\Flickr8k\Flickr8k_dataset\mohit.jpg" alt="" style="height: 150px;width: 150px;border-radius: 50%;margin-right: 5px;"></div>
+              <div class="text-decoration">
+                <h4>Mohit Rathore</h4>
+                <span>B-Tech Computer Science and Engineering <br>Information Technology</span>
+                <p>Sharda University</p>
+              </div>
+            </div>
+          </div>
+
+
+        <div class="row4">
+            <div class="member1">
+              <div><img src="C:\Flickr8k\Flickr8k_dataset\dipanshu.jpeg" alt="" style="height: 150px;width: 150px;border-radius: 50%;margin-right: 5px;"></div>
+              <div class="text-decoration">
+                <h4>Dipanshu</h4>
+                <span>B-Tech 
+                  <br>Computer Science and Engineering</span>
+                <p>Sharda University</p>
+              </div>
+            </div>
+          </div>
+    
+        </div>
+
+      </div>
+</section>
+<!-- End Team Section -->
+</main><!-- End #main -->
+ 
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Image Captions Generator</h4>
+            <p>Sharda University<br>
+              Greater Noida, Uttar Pradesh<br>
+              India <br><br>
+              <strong>Email:</strong>SupriyaKumari@3.gmail.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#choose_img">Caption Your Image</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#team">Team</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Interested Domains</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#">machine Learning</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://imagecaptiongenerator.com/#">Artificial Intelligence</a></li>
+            </ul>
+          </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+        © Copyright <strong><span>Image Captions Generator</span></strong>. All Rights Reserved
+      </div>
+     
+
+  <!-- Vendor JS Files -->
+  <script src="./Image Caption Generator_files/jquery.min.js.download"></script>
+  <script src="./Image Caption Generator_files/bootstrap.bundle.min.js.download"></script>
+  <script src="./Image Caption Generator_files/jquery.easing.min.js.download"></script>
+  <script src="./Image Caption Generator_files/validate.js.download"></script>
+  <script src="./Image Caption Generator_files/jquery.waypoints.min.js.download"></script>
+  <script src="./Image Caption Generator_files/isotope.pkgd.min.js.download"></script>
+  <script src="./Image Caption Generator_files/venobox.min.js.download"></script>
+  <script src="./Image Caption Generator_files/owl.carousel.min.js.download"></script>
+  <script src="./Image Caption Generator_files/aos.js.download"></script>
+
+  <!-- Template Main JS File -->
+  <script src="./Image Caption Generator_files/main.js.download"></script><nav class="mobile-nav d-lg-none">
+        <ul>
+          <li class="active"><a href="https://imagecaptiongenerator.com/">Home</a></li>
+          <li><a href="https://imagecaptiongenerator.com/#about">About</a></li>
+          <li><a href="https://imagecaptiongenerator.com/#portfolio">Results</a></li>
+          <li><a href="https://imagecaptiongenerator.com/#team">Team</a></li>
+          <li><a href="https://imagecaptiongenerator.com/#footer">Contact</a></li>
+
+        </ul>
+      </nav><div class="mobile-nav-overly" style="display: none;"></div>
+
+
+
+
+  </script>
+    </section>
+
+
+
+
+	</body>
+	</html>
